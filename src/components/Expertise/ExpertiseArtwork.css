@@ -1,0 +1,56 @@
+/* src/components/Expertise/ExpertiseArtwork.css */
+.expertise-artwork-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.expertise-artwork-img {
+  width: 100%;
+  max-width: 850px; /* Large enough to feel like the centerpiece */
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 40px 60px rgba(23, 33, 29, 0.15));
+}
+
+/* Soft floor shadow beneath the artwork */
+.artwork-floor-shadow {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 60px;
+  background: radial-gradient(ellipse at center, rgba(197, 138, 53, 0.25) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .expertise-artwork-wrapper {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    margin: 0 auto 1.5rem;
+    pointer-events: auto;
+  }
+
+  .expertise-artwork-img {
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise-artwork-img {
+    max-width: 360px;
+  }
+}

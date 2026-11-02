@@ -1,0 +1,208 @@
+/* src/components/About/AboutContent.css */
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Eyebrow (NOTRE EXPERTISE style) ------------------------------------ */
+.about-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow-line {
+  width: 32px;
+  height: 1px;
+  background: #C58A35; /* Metallic gold */
+}
+
+.eyebrow-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #17211D;
+}
+
+/* Headline ---------------------------------------------------------- */
+.about-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #17211D;
+  margin: 0 0 1.5rem;
+}
+
+.about-title-accent {
+  color: #C58A35;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Description ------------------------------------------------------- */
+.about-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4A5551;
+  margin: 0 0 3.5rem;
+  max-width: 560px;
+}
+
+.about-description strong {
+  color: #17211D;
+  font-weight: 600;
+}
+
+/* Timeline ---------------------------------------------------------- */
+.about-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  padding-left: 0;
+}
+
+/* --- TIMELINE LINES (Background & Animated Progress) --- */
+.timeline-line-bg,
+.timeline-line-progress {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 120px; /* Aligns perfectly with the dot center */
+  width: 1px;
+  z-index: 0;
+  transform-origin: top; /* Critical for the gold line to grow downward */
+}
+
+.timeline-line-bg {
+  background: rgba(197, 138, 53, 0.2); /* Faint gold line */
+}
+
+.timeline-line-progress {
+  background: linear-gradient(to bottom, #C58A35, #B96B27);
+  box-shadow: 0 0 8px rgba(197, 138, 53, 0.4); /* Premium glow effect */
+}
+
+/* Timeline Items ---------------------------------------------------- */
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Side (Year + Dot) -------------------------------------------- */
+.timeline-left {
+  width: 120px; /* Fixed width to align the vertical lines */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.timeline-year {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #C58A35;
+  white-space: nowrap;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #FFF9EF;
+  border: 1px solid rgba(197, 138, 53, 0.4);
+  color: #C58A35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(16px); /* Centers the dot exactly on the line */
+  box-shadow: 0 0 0 4px rgba(255, 249, 239, 1); /* Creates a gap effect over the line */
+}
+
+/* Right Side (Content) ---------------------------------------------- */
+.timeline-right {
+  padding-bottom: 1rem;
+}
+
+.timeline-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #17211D;
+  margin: 0 0 0.25rem;
+}
+
+.timeline-company {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #B96B27; /* Burnt orange for contrast */
+  margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #6B7672;
+  margin: 0;
+  max-width: 500px;
+}
+
+/* Responsive -------------------------------------------------------- */
+@media (max-width: 968px) {
+  .about-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-eyebrow {
+    justify-content: center;
+  }
+
+  .about-description {
+    margin-inline: auto;
+  }
+
+  /* Center the lines on mobile */
+  .timeline-line-bg,
+  .timeline-line-progress {
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: top;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .timeline-left {
+    align-items: center;
+    width: auto; /* Let it shrink */
+  }
+
+  .timeline-dot {
+    transform: none;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-desc {
+    margin-inline: auto;
+  }
+}

@@ -1,0 +1,126 @@
+/* src/components/About/AboutVisual.css */
+
+.about-visual {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The image window with Brand Border */
+.about-image-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 520px; 
+  border-radius: 16px;
+  overflow: hidden;
+  background: #F6F0E5;
+  border: 2px solid #EACB91; /* ✅ Brand gold border directly on image */
+  padding: 8px; /* Inner padding so border doesn't touch the photo */
+}
+
+/* Scaled taller than the wrapper so parallax doesn't reveal gaps */
+.about-portrait {
+  width: 100%;
+  height: 120%; /* Extra height for parallax */
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 10px; /* Matches outer radius minus padding */
+  filter: contrast(1.05) sepia(0.1);
+}
+
+/* Stats cards placed BELOW the image */
+.about-stats-grid {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem; /* ✅ Positive margin pushes cards below */
+  width: 100%;
+}
+
+/* Card Styling (No borders) */
+.stat-card {
+  background: #FFFCF5; /* Solid cream */
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: none; /* ✅ Removed border */
+  box-shadow: 0 8px 24px rgba(23, 33, 29, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%; /* ✅ Full width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 12px 30px rgba(23, 33, 29, 0.1);
+}
+
+.stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(197, 138, 53, 0.1);
+  color: #C58A35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #17211D;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #C58A35;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.stat-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: #6B7672;
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .about-visual {
+    max-width: 100%;
+  }
+
+  .about-image-wrapper {
+    height: 480px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image-wrapper {
+    height: 400px;
+  }
+  
+  .stat-card {
+    padding: 0.875rem 1rem;
+  }
+}

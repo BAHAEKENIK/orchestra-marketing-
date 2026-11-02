@@ -1,0 +1,125 @@
+/* src/components/Testimonials/TestimonialCard.css */
+.testimonial-card {
+  position: relative;
+  background: rgba(255, 249, 239, 0.8); /* Cream white */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(197, 138, 53, 0.2); /* Faint gold border */
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(23, 33, 29, 0.06);
+  border-color: rgba(197, 138, 53, 0.5);
+}
+
+/* Quote Icon -------------------------------------------------------- */
+.quote-icon-wrapper {
+  color: #EACB91; /* Champagne gold */
+  margin-bottom: 1.5rem;
+}
+
+/* Quote Text -------------------------------------------------------- */
+.testimonial-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: #17211D;
+  margin: 0 0 2.5rem 0;
+  flex: 1;
+}
+
+/* Footer ------------------------------------------------------------ */
+.testimonial-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(197, 138, 53, 0.15);
+  padding-top: 1.5rem;
+  gap: 1rem;
+}
+
+.testimonial-author-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #18372C; /* Forest Green */
+  color: #FFF9EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.author-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #17211D;
+}
+
+.author-role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: #6B7672;
+  margin-top: 2px;
+}
+
+/* Metric Highlight -------------------------------------------------- */
+.testimonial-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.metric-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #C58A35; /* Metallic gold */
+  line-height: 1;
+}
+
+.metric-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6B7672;
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .testimonial-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  
+  .testimonial-metric {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

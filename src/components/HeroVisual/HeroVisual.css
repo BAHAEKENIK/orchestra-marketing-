@@ -1,0 +1,265 @@
+/* src/components/HeroVisual/HeroVisual.css */
+
+.hero-visual {
+  position: relative;
+  height: 100%;
+  min-height: 700px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* 1. DEFAULT COLOR LOGO BACKDROP */
+.hero-logo-backdrop {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 145%;
+  max-width: 900px;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.logo-color-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(30, 60, 99, 0.12) 0%, rgba(197, 138, 53, 0.15) 45%, transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.hero-logo-motion {
+  width: 100%;
+  display: flex;
+}
+
+.default-logo-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+  filter: contrast(1.1) drop-shadow(0 20px 40px rgba(30, 60, 99, 0.1));
+}
+
+/* 2. PORTRAIT */
+.portrait-wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 750px;
+  margin-top: auto;
+}
+
+.portrait-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+}
+
+/* 3. FLOATING CARDS */
+.floating-card {
+  position: absolute;
+  background: rgba(255, 252, 245, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 14px 18px;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(91, 64, 30, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 4;
+}
+
+/* --- SPECIFIC STYLES FOR +300% CARD --- */
+.card-growth-stats {
+  top: 12%;
+  left: 5%;
+  padding: 18px 22px;
+  gap: 16px;
+}
+
+.growth-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-growth-stats .card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #17272C;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.card-growth-stats .card-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #17272C;
+  line-height: 1.3;
+}
+
+.card-arrow-top {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+/* --- PLATFORMS CARD (NEW CLEAN DESIGN) --- */
+.card-platforms {
+  top: 45%;
+  left: 2%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 24px;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.95); /* Slightly cleaner white */
+}
+
+.platforms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platform-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: #17272C;
+}
+
+.platform-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ WHATSAPP CARD */
+.card-whatsapp {
+  top: 15%;
+  right: -5%;
+  cursor: pointer;
+}
+
+/* --- UPDATED ANALYTICS CARD --- */
+.card-analytics {
+  top: 65%;
+  right: 0%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 20px 0 20px;
+  gap: 0;
+  overflow: hidden;
+  width: 180px;
+}
+
+.analytics-content {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: -10px;
+}
+
+.analytics-header {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: #17272C;
+}
+
+.analytics-desc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: #4A5551;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.analytics-chart-wrapper {
+  width: 100%;
+  height: 50px;
+  margin-top: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.analytics-chart {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* General Card Text Styles */
+.card-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-charcoal);
+  display: block;
+}
+
+.card-desc {
+  font-size: 12px;
+  color: var(--color-slate);
+  line-height: 1.2;
+}
+
+/* WhatsApp */
+.wa-icon {
+  background: #25D366;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-arrow {
+  background: var(--color-charcoal);
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  margin-left: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-visual { min-height: 550px; }
+  .hero-logo-backdrop { width: 120%; top: 40%; }
+  
+  .card-platforms { display: none; }
+  
+  .card-growth-stats { top: 5%; left: 0; }
+  
+  .card-whatsapp { 
+    top: 10%; 
+    right: 0; 
+  }
+  
+  .card-analytics { top: 75%; right: 0; }
+}

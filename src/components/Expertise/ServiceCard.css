@@ -1,0 +1,96 @@
+/* src/components/Expertise/ServiceCard.css */
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.75rem 1.75rem;
+  background: rgba(255, 249, 239, 0.72); /* Cream white, slightly translucent */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(234, 203, 145, 0.4); /* Faint champagne border */
+  border-radius: 14px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  overflow: hidden;
+  z-index: 5;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(197, 138, 53, 0.7);
+  box-shadow:
+    0 20px 40px rgba(23, 33, 29, 0.08),
+    0 0 0 1px rgba(197, 138, 53, 0.15);
+}
+
+/* Icon -------------------------------------------------------------- */
+.service-icon-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(234, 203, 145, 0.25);
+  color: #C58A35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Title ------------------------------------------------------------- */
+.service-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #17211D;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+/* Description ------------------------------------------------------- */
+.service-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #4A5551;
+  margin: 0 0 1.5rem;
+  flex: 1;
+}
+
+/* Link -------------------------------------------------------------- */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #B96B27; /* Burnt orange */
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+  transition: color 0.2s ease;
+}
+
+.service-link:hover {
+  color: #C58A35;
+}
+
+.service-link-arrow {
+  display: flex;
+  align-items: center;
+}
+
+/* Border glow (optional subtle ornament) ---------------------------- */
+.service-card-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(234, 203, 145, 0) 40%, rgba(234, 203, 145, 0.15) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-card:hover .service-card-border-glow {
+  opacity: 1;
+}

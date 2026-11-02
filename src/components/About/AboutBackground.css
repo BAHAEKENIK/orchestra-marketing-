@@ -1,0 +1,47 @@
+/* src/components/About/AboutBackground.css */
+.about-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-bg-light {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle, rgba(234, 203, 145, 0.18) 0%, transparent 60%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.about-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(234, 203, 145, 0.15);
+}
+
+.about-bg-circle-1 {
+  width: 700px;
+  height: 700px;
+  top: -150px;
+  right: -200px;
+  background: rgba(255, 249, 239, 0.7);
+}
+
+.about-bg-circle-2 {
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  left: -150px;
+}
+
+.about-bg-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}

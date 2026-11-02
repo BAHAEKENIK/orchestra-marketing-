@@ -1,0 +1,330 @@
+/* src/components/Contact/Contact.css */
+.contact-section {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  background-color: #18372C; /* Forest Green */
+  padding: 8rem 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Elements ----------------------------------------------- */
+.contact-bg-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(circle, rgba(234, 203, 145, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-bg-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Layout ------------------------------------------------------------ */
+.contact-container {
+  position: relative;
+  z-index: 10;
+  width: var(--container-width, 1400px);
+  max-width: 90%; /* Slightly reduced to ensure it never touches the screen edges */
+  margin: 0 auto;
+  display: grid;
+  /* ✅ FIX: Using fr units prevents the gap from causing horizontal overflow */
+  grid-template-columns: 1.1fr 1fr; 
+  gap: 4rem; /* Reduced gap to give the card more breathing room */
+  align-items: center;
+}
+
+/* LEFT COLUMN ------------------------------------------------------- */
+.contact-left {
+  color: #FFF9EF;
+}
+
+.contact-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow-icon {
+  color: #EACB91; /* Champagne */
+}
+
+.eyebrow-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #EACB91;
+}
+
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0 0 1.5rem;
+  color: #FFF9EF;
+}
+
+.title-accent {
+  color: #EACB91;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.contact-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 249, 239, 0.7);
+  max-width: 480px;
+  margin: 0 0 2.5rem;
+}
+
+.contact-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 1.75rem;
+  background: #EACB91; /* Champagne Gold */
+  color: #18372C; /* Forest Green text */
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-whatsapp-btn:hover {
+  background: #C58A35; /* Metallic Gold */
+  color: #FFF9EF;
+  transform: translateY(-3px);
+}
+
+.contact-availability {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 249, 239, 0.5);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #4ADE80; /* Green for available */
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+/* RIGHT COLUMN (Digital Card) --------------------------------------- */
+.contact-right {
+  width: 100%;
+  min-width: 0; /* Prevents grid children from stretching the layout */
+}
+
+.contact-hub {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(234, 203, 145, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box; /* Ensures padding doesn't expand the card's width */
+}
+
+.contact-hub-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(234, 203, 145, 0.1);
+}
+
+.hub-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 249, 239, 0.4);
+}
+
+/* Social Links ------------------------------------------------------ */
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(234, 203, 145, 0.3);
+  transform: translateX(5px);
+}
+
+.social-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+
+.social-icon-wrapper.linkedin {
+  background: rgba(10, 102, 194, 0.15);
+  color: #0A66C2;
+}
+
+.social-icon-wrapper.instagram {
+  background: rgba(225, 48, 108, 0.15);
+  color: #E1306C;
+}
+
+.social-link:hover .social-icon-wrapper.linkedin {
+  background: #0A66C2;
+  color: white;
+}
+
+.social-link:hover .social-icon-wrapper.instagram {
+  background: #E1306C;
+  color: white;
+}
+
+.social-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.social-platform {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #FFF9EF;
+}
+
+.social-handle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 249, 239, 0.5);
+  margin-top: 2px;
+}
+
+.social-arrow {
+  color: rgba(255, 249, 239, 0.3);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover .social-arrow {
+  color: #EACB91;
+  transform: translate(2px, -2px);
+}
+
+/* Footer of the Card ------------------------------------------------ */
+.contact-hub-footer {
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(234, 203, 145, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 249, 239, 0.5);
+}
+
+.email-link {
+  color: #EACB91;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.email-link:hover {
+  color: #C58A35;
+  text-decoration: underline;
+}
+
+/* Responsive -------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .contact-left {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-description {
+    margin-inline: auto;
+  }
+
+  .contact-availability {
+    justify-content: center;
+  }
+
+  .contact-right {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 5rem 0;
+  }
+
+  .contact-hub {
+    padding: 1.5rem;
+  }
+
+  .social-link {
+    padding: 0.75rem;
+  }
+
+  .contact-whatsapp-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

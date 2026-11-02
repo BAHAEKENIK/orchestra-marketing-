@@ -1,0 +1,112 @@
+/* src/components/Expertise/ExpertiseHeader.css */
+.expertise-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 3.5rem;
+}
+
+/* Eyebrow ------------------------------------------------------------ */
+.exp-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.75rem;
+}
+
+.eyebrow-line {
+  width: 32px;
+  height: 1px;
+  background: #C58A35; /* Metallic gold */
+}
+
+.eyebrow-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #17211D; /* Charcoal */
+}
+
+/* Headline ----------------------------------------------------------- */
+.exp-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(2.4rem, 3.8vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #17211D; /* Charcoal */
+  margin: 0 0 1.75rem;
+}
+
+.exp-title-accent {
+  color: #C58A35; /* Metallic gold */
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Description -------------------------------------------------------- */
+.exp-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #4A5551; /* Soft charcoal derived from forest green */
+  max-width: 460px;
+  margin: 0 0 2.5rem;
+}
+
+/* CTA Button --------------------------------------------------------- */
+.exp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 1rem 1.75rem;
+  background: #18372C; /* Forest green */
+  color: #F6F0E5; /* Warm ivory */
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(24, 55, 44, 0.15);
+}
+
+.exp-cta:hover {
+  background: #0F2920;
+  box-shadow: 0 12px 30px rgba(24, 55, 44, 0.25);
+}
+
+.exp-cta-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive --------------------------------------------------------- */
+@media (max-width: 968px) {
+  .expertise-header {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .exp-eyebrow {
+    justify-content: center;
+  }
+
+  .exp-description {
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-title {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+
+  .exp-description {
+    font-size: 0.95rem;
+  }
+}
