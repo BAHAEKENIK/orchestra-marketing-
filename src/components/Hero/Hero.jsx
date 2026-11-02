@@ -25,6 +25,24 @@ const bottomServices = [
   { icon: <TrendingUp size={24} strokeWidth={1.5} />, title: 'Croissance', desc: 'Des résultats mesurables' },
 ];
 
+// Variants for the bottom strip stagger animation
+const stripContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+  }
+};
+
+const stripItemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+};
+
 export default function Hero() {
   // Creative pre-filled message for the main CTA
   const whatsappMessage = encodeURIComponent("Bonjour Orchestra Marketing IA, je suis sur votre site et je souhaite discuter de mon projet. Comment l'IA peut-elle accélérer ma croissance ? 🚀");
@@ -45,7 +63,7 @@ export default function Hero() {
             <span className="hero-eyebrow">IA + MARKETING + CROISSANCE</span>
           </motion.div>
 
-          {/* ✅ Reduced delay from 0.2 to 0.1 to speed up render */}
+          {/* Fast CSS Reveal for LCP */}
           <motion.h1
             className="hero-title"
             initial={{ opacity: 0, y: 15 }}
@@ -56,7 +74,7 @@ export default function Hero() {
             votre <span>marque.</span>
           </motion.h1>
 
-          {/* ✅ LCP ELEMENT: Reduced delay from 0.4 to 0.15 for instant visibility */}
+          {/* LCP ELEMENT: Instant visibility */}
           <motion.p
             className="hero-description"
             initial={{ opacity: 0, y: 15 }}
@@ -119,20 +137,26 @@ export default function Hero() {
         <HeroVisual />
       </div>
 
-      {/* BOTTOM SERVICES STRIP */}
-      <div className="hero-bottom-strip">
+      {/* ✅ NEW BOTTOM SERVICES STRIP WITH LAZY-LOAD STAGGER ANIMATION */}
+      <motion.div 
+        className="hero-bottom-strip"
+        variants={stripContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+      >
         <div className="strip-dots" aria-hidden="true"></div>
         
         <div className="strip-items">
           {bottomServices.map((service, index) => (
             <React.Fragment key={index}>
-              <div className="strip-item">
+              <motion.div className="strip-item" variants={stripItemVariants}>
                 <div className="strip-icon">{service.icon}</div>
                 <div className="strip-text">
                   <span className="strip-title">{service.title}</span>
                   <span className="strip-desc">{service.desc}</span>
                 </div>
-              </div>
+              </motion.div>
               {index < bottomServices.length - 1 && (
                 <div className="strip-divider" aria-hidden="true"></div>
               )}
@@ -140,14 +164,14 @@ export default function Hero() {
           ))}
         </div>
 
-        <div className="strip-handwritten">
+        <motion.div className="strip-handwritten" variants={stripItemVariants}>
           <span>L'IA au service</span>
           <span>de votre croissance</span>
           <svg viewBox="0 0 150 20" className="handwritten-underline" aria-hidden="true">
             <path d="M5,15 Q50,5 145,10" fill="none" stroke="#C58A35" strokeWidth="2" strokeLinecap="round" />
           </svg>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

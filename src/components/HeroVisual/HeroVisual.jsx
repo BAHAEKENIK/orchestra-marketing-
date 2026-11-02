@@ -80,11 +80,10 @@ export default function HeroVisual() {
           
           <motion.div
             className="hero-logo-motion"
-            initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
-            animate={{ scale: 1, opacity: 1, rotate: 0 }}
-            transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+            initial={{ scale: 0.8, opacity: 0, rotate: -10, filter: "blur(10px)" }}
+            animate={{ scale: 1, opacity: 1, rotate: 0, filter: "blur(0px)" }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
           >
-            {/* ✅ Added width and height to prevent CLS */}
             <img 
               src={logo} 
               alt="Orchestra Marketing IA Logo" 
@@ -95,8 +94,8 @@ export default function HeroVisual() {
           </motion.div>
         </div>
 
-        {/* ✅ Added width, height, and fetchPriority to optimize LCP and fix CLS */}
-        <img 
+        {/* ✅ PREMIUM BLUR-UP LOADING EFFECT ON PORTRAIT */}
+        <motion.img 
           src={portrait} 
           alt="Adil El Makhloufi, fondateur de l'agence de marketing IA Orchestra à Tanger, Maroc" 
           className="portrait-img" 
@@ -104,6 +103,9 @@ export default function HeroVisual() {
           height="800"
           fetchPriority="high"
           loading="eager"
+          initial={{ opacity: 0, filter: "blur(20px)", scale: 1.05 }}
+          animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         />
       </motion.div>
 
@@ -112,8 +114,8 @@ export default function HeroVisual() {
       {/* --- +300% CARD --- */}
       <motion.div
         className="floating-card card-growth-stats"
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
+        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.8, delay: 1 }}
       >
         <div className="growth-icon-wrapper">
@@ -131,8 +133,8 @@ export default function HeroVisual() {
       {/* --- UPDATED PLATFORMS CARD --- */}
       <motion.div
         className="floating-card card-platforms"
-        initial={{ opacity: 0, x: -30 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
+        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.8, delay: 1.2 }}
       >
         <div className="platforms-list">
@@ -161,8 +163,8 @@ export default function HeroVisual() {
         target="_blank"
         rel="noopener noreferrer"
         className="floating-card card-whatsapp"
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: 30, filter: "blur(10px)" }}
+        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.8, delay: 1.4 }}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
@@ -179,8 +181,8 @@ export default function HeroVisual() {
       {/* --- ANALYTICS CARD --- */}
       <motion.div
         className="floating-card card-analytics"
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: 30, filter: "blur(10px)" }}
+        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.8, delay: 1.6 }}
       >
         <div className="analytics-content">

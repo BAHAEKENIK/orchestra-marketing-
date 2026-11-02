@@ -57,7 +57,6 @@
   color: var(--color-charcoal);
 }
 
-/* ✅ UPDATED HEADLINE WITH TYPEWRITER */
 .hero-title {
   font-family: var(--font-serif);
   font-size: clamp(55px, 6vw, 95px);
@@ -66,28 +65,12 @@
   letter-spacing: -3px;
   color: var(--color-charcoal);
   margin: 0 0 24px;
-  min-height: 2.2em; /* Prevents layout jump during typing */
+  min-height: 2.2em; /* Prevents layout jump */
 }
 
 .hero-title span {
   color: var(--color-gold);
   font-style: italic;
-}
-
-/* ✅ TYPING CURSOR */
-.typing-cursor {
-  display: inline-block;
-  width: 4px;
-  height: 0.85em;
-  background-color: var(--color-gold);
-  margin-left: 8px;
-  vertical-align: baseline;
-  animation: blinkCursor 0.8s step-end infinite;
-}
-
-@keyframes blinkCursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
 }
 
 .hero-description {
