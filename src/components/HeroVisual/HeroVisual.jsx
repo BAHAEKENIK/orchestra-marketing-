@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
-import logo from '../../assets/images/orchestra_logo.svg';
 import portrait from '../../assets/images/adil-portrait.png';
+// ✅ Import your new background images
+import pcBackground from '../../assets/images/logo/pc_background.png';
+import phoneBackground from '../../assets/images/logo/phone_background.png';
 import './HeroVisual.css';
 
 // --- CUSTOM GROWTH CHART ICON ---
@@ -68,7 +70,7 @@ export default function HeroVisual() {
   return (
     <div className="hero-visual">
 
-      {/* 1. PORTRAIT + DEFAULT COLOR LOGO BACKDROP */}
+      {/* 1. PORTRAIT + NEW BACKGROUND IMAGES */}
       <motion.div
         className="portrait-wrapper"
         initial={{ opacity: 0, y: 40 }}
@@ -84,13 +86,17 @@ export default function HeroVisual() {
             animate={{ scale: 1, opacity: 1, rotate: 0, filter: "blur(0px)" }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
           >
-            <img 
-              src={logo} 
-              alt="Orchestra Marketing IA Logo" 
-              className="default-logo-img" 
-              width="500" 
-              height="250"
-            />
+            {/* ✅ Responsive Picture Element for the new backgrounds */}
+            <picture>
+              <source media="(max-width: 1024px)" srcSet={phoneBackground} />
+              <img 
+                src={pcBackground} 
+                alt="Orchestra Marketing IA Background" 
+                className="default-logo-img" 
+                width="1000" 
+                height="1000"
+              />
+            </picture>
           </motion.div>
         </div>
 

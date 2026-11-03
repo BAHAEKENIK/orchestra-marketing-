@@ -10,7 +10,7 @@
   z-index: 1;
 }
 
-/* 1. DEFAULT COLOR LOGO BACKDROP */
+/* 1. BACKGROUND IMAGES */
 .hero-logo-backdrop {
   position: absolute;
   top: 42%;
@@ -43,12 +43,13 @@
   will-change: transform, opacity, filter;
 }
 
+/* ✅ Updated to handle the new PNGs cleanly */
 .default-logo-img {
   width: 100%;
   height: auto;
-  opacity: 0.85;
-  mix-blend-mode: multiply;
-  filter: contrast(1.1) drop-shadow(0 20px 40px rgba(30, 60, 99, 0.1));
+  object-fit: contain;
+  opacity: 0.9; /* Slight transparency to blend nicely */
+  filter: drop-shadow(0 20px 40px rgba(30, 60, 99, 0.1)); /* Subtle shadow */
 }
 
 /* 2. PORTRAIT */
@@ -255,7 +256,7 @@
   .hero-visual { min-height: 550px; }
   .hero-logo-backdrop { width: 120%; top: 40%; }
   
-  /* ✅ HIDDEN ON MOBILE */
+  /* ✅ HIDDEN ON MOBILE AS REQUESTED */
   .card-growth-stats { 
     display: none; 
   }
